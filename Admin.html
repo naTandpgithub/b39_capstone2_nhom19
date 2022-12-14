@@ -24,7 +24,7 @@
       <br />
       <!-- Tab panes -->
       <div class="tab-content">
-        <!--Danh sách người dùng -->
+        <!--Danh sách Sản Phẩm-->
         <div role="tabpanel" class="tab-pane in active" id="DanhSachSP">
           <div class="row">
             <div class="col-md-8">
@@ -68,22 +68,23 @@
                 <th>Tên Sản Phẩm</th>
                 <th>Giá</th>
                 <th>Hình Ảnh</th>
+                <th>Hãng</th>
                 <th>Mô Tả</th>
 
                 <th>Action</th>
               </thead>
               <tbody id="tblDanhSachSP"></tbody>
             </table>
-            <!-- END TABLE NGƯỜI DÙNG -->
+            <!-- END TABLE Sản Phẩm -->
           </div>
           <br />
         </div>
-        <!-- Kết thúc danh sách người dùng -->
+        <!-- Kết thúc danh sách sản phẩm -->
         <!-- Danh sách khóa học -->
         <div role="tabpanel" class="tab-pane fade" id="DanhSachKhoaHoc">
           <span>Đang cập nhật...</span>
         </div>
-        <!-- Kết thúc danh sách khóa học -->
+        <!-- Kết thúc danh sách  -->
         <!-- Thống kê -->
         <div role="tabpanel" class="tab-pane fade" id="ThongKe">
           <span>Đang cập nhật...</span>
@@ -141,6 +142,20 @@
                   >
                   </span>
                 </div>
+                <div class="form-group">
+                  <select id="loaiSP">
+                    <option value=>Vui lòng phân loại</option>
+                    <option value="0">Iphone</option>
+                    <option value="1">SamSung</option>
+                  </select>
+                  <span
+                  class="text-danger"
+                  id="errorLoai"
+                  style="display: none"
+                >
+                </span>
+
+                </div>
 
                 <div class="form-group">
                   <label>Mô tả</label>
@@ -182,18 +197,15 @@
       crossorigin="anonymous"
     ></script>
     <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
       crossorigin="anonymous"
     ></script>
     <script
-      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
-    <script src="https://code.highcharts.com/highcharts.js"></script>
-    <script src="https://code.highcharts.com/modules/series-label.js"></script>
-    <script src="https://code.highcharts.com/modules/exporting.js"></script>
     <!-- axios  -->
 
     <script
@@ -202,9 +214,6 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-    <script src="./../validation/validation.js"></script>
-    <script src="./../models/data.js"></script>
-    <script src="../services/services.js"></script>
-    <script src="./../controllers/main.js"></script>
+    <script src="./src/control/mainAdmin.js" type="module"></script>
   </body>
 </html>

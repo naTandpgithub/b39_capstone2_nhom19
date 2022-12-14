@@ -16,6 +16,14 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
+    <!-- font awesome  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
     <link rel="stylesheet" href="./scss/css/style.css" />
   </head>
@@ -24,16 +32,24 @@
       <header>
         <h2 class="title__header">Thông Tin Sản Phẩm</h2>
       </header>
-
-      <section id="filter" class="">
-        <select>
-          <option value="0">Chọn Sản Phẩm</option>
-          <option value="1">SamSung</option>
-          <option value="2">Iphone</option>
-        </select>
+      <div class="d-flex align-items-center filtermenu">
+        <div>
+          <section class="">
+            <select id="filter">
+              <option value="0">Chọn Sản Phẩm</option>
+              <option value="1">SamSung</option>
+              <option value="2">Iphone</option>
+              <option value="3">Tất cả</option>
+            </select>
+          </section>
+        </div>
+        <div id="cart" class="ml-auto">
+          <i class="fa-solid fa-cart-shopping"></i>
+        </div>
+      </div>
+      <section id="product">
+        <div class="row" id="product__content"></div>
       </section>
-
-      <section id="product"></section>
     </div>
 
     <!-- Optional JavaScript -->
@@ -60,6 +76,6 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-    <script src="./src/control/main.js" type="module"></script>
+    <script src="./src/control/mainSP.js" type="module"></script>
   </body>
 </html>
