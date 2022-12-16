@@ -32,21 +32,33 @@
       <header>
         <h2 class="title__header">Thông Tin Sản Phẩm</h2>
       </header>
-      <div class="d-flex align-items-center filtermenu">
+      <div class="d-flex align-items-center filtermenu  m-3 p-3">
         <div>
           <section class="">
             <select id="filter">
-              <option value="0">Chọn Sản Phẩm</option>
-              <option value="1">SamSung</option>
-              <option value="2">Iphone</option>
-              <option value="3">Tất cả</option>
+              <option value=>Chọn Sản Phẩm</option>
+              <option value="SamSung">SamSung</option>
+              <option value="IPhone">Iphone</option>
+              
             </select>
           </section>
         </div>
-        <div id="cart" class="ml-auto">
-          <i class="fa-solid fa-cart-shopping"></i>
+        <div id="cart" class="ml-auto   d-flex align-items-center  boxcart ">
+         <div class="ml-3"> <i class="fa-solid fa-cart-shopping"></i></div>
+         <div class="ml-3 "  >  <a href="#cartItem"  data-toggle="collapse" class="cartInfo"> Giỏ Hàng</a></div>
+        
         </div>
-      </div>
+       
+          
+       
+        </div>
+        <div  class="collapse "  id="cartItem">
+          <p>Giỏ hàng còn trống</p>
+  
+        </div>
+
+
+
       <section id="product">
         <div class="row" id="product__content"></div>
       </section>

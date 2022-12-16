@@ -67,6 +67,10 @@
                 <th>STT</th>
                 <th>Tên Sản Phẩm</th>
                 <th>Giá</th>
+                <th>Màn hình</th>
+                <th>Camera Sau</th>
+                <th>Camera Trước</th>
+
                 <th>Hình Ảnh</th>
                 <th>Hãng</th>
                 <th>Mô Tả</th>
@@ -129,6 +133,36 @@
                   </span>
                 </div>
                 <div class="form-group">
+                  <label>Màn Hình</label>
+                  <input
+                    id="screen"
+                    class="form-control"
+                    placeholder="Nhập vào Chỉ số"
+                  />
+                  <span class="text-danger" id="errorScreen" style="display: none">
+                  </span>
+                </div>
+                <div class="form-group">
+                  <label>Camera Sau</label>
+                  <input
+                    id="cameraBack"
+                    class="form-control"
+                    placeholder="Nhập vào chỉ số"
+                  />
+                  <span class="text-danger" id="errorBack" style="display: none">
+                  </span>
+                </div>
+                <div class="form-group">
+                  <label>Camera Trước</label>
+                  <input
+                    id="cameraFront"
+                    class="form-control"
+                    placeholder="Nhập vào chỉ số"
+                  />
+                  <span class="text-danger" id="errorFront" style="display: none">
+                  </span>
+                </div>
+                <div class="form-group">
                   <label>Hình Ảnh</label>
                   <input
                     id="hinhAnh"
@@ -145,8 +179,8 @@
                 <div class="form-group">
                   <select id="loaiSP">
                     <option value=>Vui lòng phân loại</option>
-                    <option value="0">Iphone</option>
-                    <option value="1">SamSung</option>
+                    <option value="IPhone">Iphone</option>
+                    <option value="SamSung">SamSung</option>
                   </select>
                   <span
                   class="text-danger"

@@ -19,6 +19,10 @@ const renderHTML = (data) => {
                 <td>${item.id}</td>
                 <td>${item.name}</td>
                 <td>${item.price}</td>
+                <td>${item.screen}</td>
+                <td>${item.backCamera}</td>
+                <td>${item.frontCamera}</td>
+
                 <td> <img src="${
                   item.img
                 }" alt=""  style="width: 50px" />   </td>
@@ -99,6 +103,10 @@ getEle("btnThemSP").addEventListener("click", () => {
 function addSP() {
   const ten = getEle("tenSP").value;
   const gia = getEle("gia").value;
+  const screen = getEle("screen").value;
+  const back = getEle("cameraBack").value;
+  const front = getEle("cameraFront").value;
+
   const hinhAnh = getEle("hinhAnh").value;
   const loai = getEle("loaiSP").value;
   const mota = getEle("moTa").value;
@@ -115,6 +123,13 @@ function addSP() {
   isValid &=
     validation.kiemTraRong(gia, "errorGia", "Vui lòng nhập giá Sản Phẩm") &&
     validation.kiemtraSo(gia, "errorGia", "Vui lòng nhập giá Sản Phẩm bằng số");
+  //// màn hình
+  isValid &= validation.kiemTraRong(screen, "errorScreen", "Vui lòng nhập vào");
+  ////camera sau
+  isValid &= validation.kiemTraRong(back, "errorBack", "Vui lòng nhập vào");
+  ////camera trước
+  isValid &= validation.kiemTraRong(front, "errorFront", "Vui lòng nhập vào");
+
   /////Hình ảnh
   isValid &= validation.kiemTraRong(
     hinhAnh,
@@ -138,7 +153,16 @@ function addSP() {
 
   if (!isValid) return;
 
-  const product = new Product(ten, gia, "", "", "", hinhAnh, mota, loai);
+  const product = new Product(
+    ten,
+    gia,
+    screen,
+    back,
+    front,
+    hinhAnh,
+    mota,
+    loai
+  );
   console.log(product);
 
   ///add product len server
@@ -163,7 +187,6 @@ function editSP(id) {
     <button class="btn btn-success" onclick="updateSP(${id})" > Update </button>
   `;
   document.getElementsByClassName("modal-footer")[0].innerHTML = button;
-  console.log("run here");
 
   productService
     .getProductById(id)
@@ -172,6 +195,9 @@ function editSP(id) {
       let product = rs.data;
       getEle("tenSP").value = product.name;
       getEle("gia").value = product.price;
+      getEle("screen").value = product.screen;
+      getEle("cameraBack").value = product.backCamera;
+      getEle("cameraFront").value = product.frontCamera;
       getEle("hinhAnh").value = product.img;
       getEle("loaiSP").value = product.type;
       getEle("moTa").value = product.desc;
@@ -187,11 +213,23 @@ function updateSP(id) {
   console.log(id);
   const ten = getEle("tenSP").value;
   const gia = getEle("gia").value;
+  const screen = getEle("screen").value;
+  const back = getEle("cameraBack").value;
+  const front = getEle("cameraFront").value;
   const hinhAnh = getEle("hinhAnh").value;
   const loai = getEle("loaiSP").value;
   const moTa = getEle("moTa").value;
 
-  const product = new Product(ten, gia, "", "", "", hinhAnh, moTa, loai);
+  const product = new Product(
+    ten,
+    gia,
+    screen,
+    back,
+    front,
+    hinhAnh,
+    moTa,
+    loai
+  );
   console.log(product);
   productService
     .updateProductApi(product, id)
