@@ -10,21 +10,20 @@ const renderHTML = (data) => {
     const result = data.reduce((content, item) => {
       return (content += `
                
-      <div  class="col-12 col-lg-6 col-md-12 mt-3">
-      <div   class="d-flex m-3  ">
-                    <div>
-                    <img src="${
-                      item.img
-                    }" alt=""   class="img-fluid"   style="width: 300px"/>
+      <div  class="col-12 col-lg-6 col-md-12  cardSP ">
+      <div   class="d-flex m-3 ">
+                    <div  class="imgSP">
+                    <img src="${item.img}" alt=""   class="img-fluid"   style="width: 250px"/>
                     </div>
-                    <div>
-                        <p>Tên Sản Phẩm
+                    <div  class="text-center  textSP">
+                        <p> <br />
                         ${item.name}</p>
-                        <p>${item.backCamera}</p>
-                        <p>${item.frontCamera}</p>
-                        <p>${item.screen}</p>
-                        <p>${item.type === "1" ? "SamSung" : "IPhone"}</p>
-                        <p>${item.price}</p>
+
+                        <p >${item.desc}</p>
+                      
+                        <p>${item.price}$</p>
+
+                        <button class="btn btn-info"> Add to Cart </button>
 
                     </div>
                            
@@ -65,9 +64,10 @@ getEle("filter").addEventListener("change", () => {
       console.log(data);
 
       const listFilter = data.filter((sp) => {
-        console.log(sp.type);
-        return sp.type === option;
+        console.log(sp.type.toLowerCase());
+        return sp.type.toLowerCase() === option.toLowerCase();
       });
+      renderHTML(listFilter);
       console.log(listFilter);
     })
     .catch((err) => {
